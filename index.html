@@ -162,6 +162,14 @@ html{scroll-behavior:smooth}
 .note .ni.art .cap{text-align:center;font-size:12px;font-weight:700;color:#24565c;padding:4px 8px 6px;background:#fff}
 .note .ni div{word-break:keep-all;overflow-wrap:break-word}
 .note .nf{word-break:keep-all}
+
+/* 뒤집었을 때 앞면 배지가 비쳐 보이는 문제 수정 */
+.face,.face *{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.front .ribbon,.front .star{transform:translateZ(0)}
+.card.flip .front{visibility:hidden;transition:visibility 0s linear .3s}
+.card:not(.flip) .front{visibility:visible;transition:visibility 0s linear 0s}
+.card:not(.flip) .back{visibility:hidden;transition:visibility 0s linear .3s}
+.card.flip .back{visibility:visible;transition:visibility 0s linear 0s}
 </style></head><body>
 <header>
  <div class="hero"><span class="eyebrow">청운중학교 도서관</span><h1>2026년 제2차 청운중 신간도서(종이책)</h1><div class="hint">표지 카드를 눌러 뒤집어 보세요. 책 소개와 리뷰가 나와요</div></div>
